@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>CryptoMorse</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="light">
+
+<div class="settings-wrapper">
+<button class="settings-btn" onclick="toggleSettings()" id="btn-set-main">Settings</button>
+
+<div id="settingsPanel">
+<label id="l-lang">Language</label>
+<select id="langSelect" onchange="updateLang()">
+<option value="en">English</option>
+<option value="ru">Русский</option>
+</select>
+
+<button onclick="toggleTheme()">Theme</button>
+</div>
+</div>
+
+<div class="main-content">
+<h1 id="h-title">CryptoMorse</h1>
+
+<div class="field">
+<label id="l-text">Text</label>
+<textarea id="txt"></textarea>
+<button class="copy-btn" onclick="copyText('txt', this)">Copy</button>
+</div>
+
+<div class="field">
+<label id="l-morse">Morse</label>
+<textarea id="mrs"></textarea>
+<button class="copy-btn" onclick="copyText('mrs', this)">Copy</button>
+</div>
+
+<div class="controls">
+<button class="action-btn" onclick="clearText()" id="btn-clear">Сброс</button>
+<button class="action-btn" onclick="restoreText()" id="btn-restore">Вернуть</button>
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

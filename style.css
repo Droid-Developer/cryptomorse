@@ -1,0 +1,139 @@
+:root {
+    --bg:#ffffff;
+    --text:#202124;
+    --border:#dadce0;
+    --accent:#5f6368;
+    --primary:#1a73e8;
+    --radius:0px;
+    --trans:0s;
+}
+
+[data-theme="dark"] {
+    --bg:#121212;
+    --text:#e8eaed;
+    --border:#3c4043;
+    --accent:#9aa0a6;
+}
+
+body {
+    font-family:'Open Sans', sans-serif;
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    display:flex;
+    justify-content:center;
+    min-height:100vh;
+}
+
+/* SETTINGS */
+.settings-wrapper {
+    position:fixed;
+    top:20px;
+    left:20px;
+}
+
+.settings-btn {
+    background:var(--bg);
+    border:1px solid var(--border);
+    color:var(--text);
+    padding:10px 16px;
+    cursor:pointer;
+    font-weight:500;
+    font-family:inherit;
+}
+
+#settingsPanel {
+    display:none;
+    position:absolute;
+    top:50px;
+    left:0;
+    background:var(--bg);
+    border:1px solid var(--border);
+    padding:20px;
+    width:250px;
+    opacity:0;
+    transform:translateY(-10px);
+    transition:0.2s;
+}
+
+#settingsPanel.show {
+    display:block;
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* MAIN */
+.main-content {
+    width:90%;
+    max-width:500px;
+    margin-top:100px;
+}
+
+h1 {
+    font-size:26px;
+    font-weight:500;
+    margin-bottom:40px;
+}
+
+.field {
+    margin-bottom:30px;
+}
+
+label {
+    display:block;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    margin-bottom:10px;
+    color:var(--accent);
+}
+
+/* TEXTAREA FIX */
+textarea {
+    width:100%;
+    border:none;
+    border-bottom:2px solid var(--border);
+    padding:12px 0;
+    font-size:20px;
+    background:none;
+    color:var(--text);
+
+    caret-color:var(--text);
+    -webkit-text-fill-color:var(--text);
+}
+
+textarea:focus {
+    border-bottom-color:var(--primary);
+    outline:none;
+}
+
+::placeholder {
+    color:var(--border);
+}
+
+/* BUTTONS */
+button {
+    background:var(--bg);
+    color:var(--text);
+    border:1px solid var(--border);
+    font-family:inherit;
+}
+
+.copy-btn {
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+    cursor:pointer;
+    font-size:12px;
+}
+
+.controls {
+    display:flex;
+    gap:10px;
+}
+
+.action-btn {
+    flex:1;
+    padding:12px;
+    cursor:pointer;
+}
